@@ -1,0 +1,76 @@
+/* Vamos a hacer primero el ajuste general del body */
+body{
+    display: flex;
+    flex-direction: column;
+    color: #1a3b5c; /* Este es más o menos el color */
+    background-color: #f8f9fa; /* y este más o menos el fondo */
+    min-height: 100vh; /* Tendrá toda la altura visible de la ventana */
+    font-family: sans-serif; /* La letra que va a tener el doc */
+}
+
+/* Voy a agrupar la cabecera y el pie dado que son iguales */
+.cabecera, .pie{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem; /* Para ensanchar los "container" */
+    gap: 1rem;
+    flex-wrap: wrap; /* Este es para que se adapte */
+    background-color: #1a3b5c;
+    color: white;
+}
+
+/* Seguimos con cabecera (donde pone daw mobility */
+.cabecera__marca{
+    font-weight: bold;
+    font-size: 1.5rem; /* Agrandaar las letras DAW Mobility */
+    margin-left: 1.5rem; /* Para mover un poco a la derecha (empujándolo desde la izquierda) el DAW Mobility */
+}
+
+/* Ahora vamos a agrupar listas para el flex con el wrap */
+.menu__lista, .pie__lista{
+    display: flex; /* Con este ya consigo que pillen forma horizontal */
+    flex-wrap: wrap;
+    list-style: none; /* Para quitarle los puntos */
+    gap: 1.5rem; /* Para darles separación entre ellos */
+}
+.menu__enlace, .pie__enlace{
+    color: white;
+    text-decoration: none; /* Le quito el subrayado */
+    padding-bottom: 0.5rem; /* Para darle distancia al subrayado que me pide el ejercicio */
+}
+
+/* Para el subrayado */
+.menu__enlace:hover{
+    border-bottom: 3px solid yellow;
+}
+
+/* Ahora para los de abajo */
+.pie__enlace:hover{
+    text-decoration: underline;
+}
+
+/* La práctica he visto que tiene solicitud en negrita, y está destacado, supongo que las indicaciones se refieren a esto: */
+.menu__enlace[aria-current="page"]{
+    font-weight: bold; /* Para ponerlo en negrita solo el "Solicitud" */
+    border-bottom: 3px solid yellow; /* Dejo estático el subrayado porque me lo pide el ejercicio */
+}
+
+/* Donde pone "Solicitud de beca..." */
+.principal{
+    text-align: center;
+    flex-grow: 1; /* Esto lo que hace es como empujer el footer hacia abajo del todo, situandose así en la parte superior */
+}
+
+/* Los tamaños relativos */
+h1{
+    font-size: 1.5rem;
+}
+
+.pie__texto{
+    margin-left: 1.5rem; /* Lo muevo a la derecha lo mismo que moví el DAW Mobility poara que queden simétricos */
+}
+
+.pie__texto, .pie__enlace{
+    font-size: 0.9rem;
+}
