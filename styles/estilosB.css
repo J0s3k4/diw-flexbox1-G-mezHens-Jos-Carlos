@@ -1,0 +1,198 @@
+/* Le he puesto esto porque al parecer lo recomiendan en casi todos los sitios para asergurarte de que cuando 
+abres la página en diferentes navegadores siempre se mantenga la forma y no se rompa */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #1b1b1b;
+  background-color: #f4f6f9;
+}
+
+.salto {
+  position: absolute;
+  left: -9999px;
+}
+.salto:focus {
+  left: 0;
+  background: #ffffff;
+  padding: 1rem;
+  z-index: 100;
+}
+
+/*Cabecera y Pie */
+.cabecera, .pie {
+  background-color: #12355b;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  gap: 1rem;
+}
+
+.cabecera__marca {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu__lista, .pie__lista {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.menu__enlace, .pie__enlace {
+  color: #ffffff;
+  text-decoration: none;
+  padding-bottom: 0.2rem;
+}
+
+.menu__enlace:hover, .pie__enlace:hover {
+  text-decoration: underline;
+}
+
+.menu__enlace[aria-current="page"] {
+  font-weight: bold;
+  border-bottom: 3px solid #ffcc00;
+  text-decoration: none;
+}
+
+/* Estructura Principal*/
+.principal {
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+h1 {
+  color: #12355b;
+  margin-bottom: 1rem;
+}
+
+.principal > p {
+  margin-bottom: 2rem;
+}
+
+.contenido {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Formulario y Tarjetas */
+.formulario {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grupo {
+  background-color: #ffffff;
+  border: 1px solid #b7c0cc;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 0; /* Lo que este hace es resetear el fieldset */
+}
+
+.grupo__titulo {
+  color: #12355b;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0 0.5rem;
+}
+
+.grupo__campos {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Campos, Controles y Excepciones */
+.campo {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.campo__etiqueta {
+  font-weight: bold;
+}
+
+.campo__control {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 2px solid #5b6b7f;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  color: #1b1b1b;
+}
+
+.campo__control:focus {
+  outline: 2px solid #0a5bd3;
+  outline-offset: 2px;
+}
+
+.campo__ayuda {
+  font-size: 0.875rem;
+  color: #4a5568;
+}
+
+/* Teléfono */
+.telefono {
+  display: grid;
+  grid-template-columns: minmax(6rem, 9.5rem) 1fr;
+  gap: 0.5rem;
+}
+.telefono__prefijo, .telefono__numero {
+  /* Toman los estilos generales de campo__control automáticamente */
+}
+
+/* Las diferentes opciones que hay en los formularios */
+.opciones {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.opciones__pregunta {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.opciones__lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+  gap: 1.5rem;
+}
+
+.opcion {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: 0.5rem;
+  align-items: center;
+  min-height: 44px;
+}
+
+.opcion__marca {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0;
+}
+
+.opcion--larga {
+  align-items: start;
+  margin-top: 1rem;
+}
+
+.campo__pie {
+  display: grid;
+  gap: 0.25rem;
+}
+
