@@ -1,0 +1,188 @@
+<body>
+├── <a class="salto"> → .salto
+│
+├── <header class="cabecera"> → .cabecera
+│   ├── <p class="cabecera__marca"> → .cabecera__marca
+│   └── <nav class="menu"> → .menu
+│       └── <ul class="menu__lista"> → .menu__lista
+│           ├── <li>
+│           │   └── <a class="menu__enlace"> → .menu__enlace
+│           ├── <li>
+│           │   └── <a class="menu__enlace"> → .menu__enlace
+│           ├── <li>
+│           │   └── <a class="menu__enlace"> → .menu__enlace
+│           └── <li>
+│               └── <a class="menu__enlace"> → .menu__enlace
+│
+├── <main class="principal" id="contenido"> → .principal #contenido
+│   ├── <h1>
+│   ├── <p>
+│   └── <div class="contenido"> → .contenido
+│       │
+│       ├── <form class="formulario"> → .formulario
+│       │   │
+│       │   ├── <fieldset class="grupo grupo--personales"> → .grupo .grupo--personales
+│       │   │   ├── <legend class="grupo__titulo"> → .grupo__titulo
+│       │   │   └── <div class="grupo__campos"> → .grupo__campos
+│       │   │       ├── <div class="campo campo--nombre"> → .campo .campo--nombre
+│       │   │       │   ├── <label class="campo__etiqueta"> → .campo__etiqueta
+│       │   │       │   │   └── <span aria-hidden="true">
+│       │   │       │   └── <input class="campo__control" id="nombre"> → .campo__control #nombre
+│       │   │       │
+│       │   │       ├── <div class="campo campo--apellidos"> → .campo .campo--apellidos
+│       │   │       │   ├── <label class="campo__etiqueta"> → .campo__etiqueta
+│       │   │       │   │   └── <span aria-hidden="true">
+│       │   │       │   └── <input class="campo__control" id="apellidos"> → .campo__control #apellidos
+│       │   │       │
+│       │   │       ├── <div class="campo campo--correo"> → .campo .campo--correo
+│       │   │       │   ├── <label class="campo__etiqueta"> → .campo__etiqueta
+│       │   │       │   │   └── <span aria-hidden="true">
+│       │   │       │   ├── <input class="campo__control" id="correo"> → .campo__control #correo
+│       │   │       │   └── <p class="campo__ayuda" id="correo-ayuda"> → .campo__ayuda #correo-ayuda
+│       │   │       │
+│       │   │       ├── <div class="campo campo--telefono"> → .campo .campo--telefono
+│       │   │       │   ├── <label class="campo__etiqueta"> → .campo__etiqueta
+│       │   │       │   └── <div class="telefono"> → .telefono
+│       │   │       │       ├── <select class="campo__control telefono__prefijo"> → .campo__control .telefono__prefijo
+│       │   │       │       │   ├── <option> (+34)
+│       │   │       │       │   ├── <option> (+351)
+│       │   │       │       │   ├── <option> (+33)
+│       │   │       │       │   └── <option> (+49)
+│       │   │       │       └── <input class="campo__control telefono__numero" id="telefono"> → .campo__control .telefono__numero #telefono
+│       │   │       │
+│       │   │       └── <div class="campo campo--nacimiento"> → .campo .campo--nacimiento
+│       │   │           ├── <label class="campo__etiqueta"> → .campo__etiqueta
+│       │   │           │   └── <span aria-hidden="true">
+│       │   │           └── <input class="campo__control" id="nacimiento"> → .campo__control #nacimiento
+│       │   │
+│       │   ├── <fieldset class="grupo grupo--academicos"> → .grupo .grupo--academicos
+│       │   │   ├── <legend class="grupo__titulo"> → .grupo__titulo
+│       │   │   └── <div class="grupo__campos"> → .grupo__campos
+│       │   │       ├── <div class="campo campo--ciclo"> → .campo .campo--ciclo
+│       │   │       │   ├── <label class="campo__etiqueta"> → .campo__etiqueta
+│       │   │       │   │   └── <span aria-hidden="true">
+│       │   │       │   └── <select class="campo__control" id="ciclo"> → .campo__control #ciclo
+│       │   │       │       ├── <option> (Selecciona)
+│       │   │       │       ├── <option> (daw)
+│       │   │       │       ├── <option> (dam)
+│       │   │       │       └── <option> (asir)
+│       │   │       │
+│       │   │       ├── <fieldset class="opciones campo--curso"> → .opciones .campo--curso
+│       │   │       │   ├── <legend class="opciones__pregunta"> → .opciones__pregunta
+│       │   │       │   │   └── <span aria-hidden="true">
+│       │   │       │   └── <div class="opciones__lista"> → .opciones__lista
+│       │   │       │       ├── <div class="opcion"> → .opcion
+│       │   │       │       │   ├── <input class="opcion__marca" id="curso-1"> → .opcion__marca #curso-1
+│       │   │       │       │   └── <label>
+│       │   │       │       └── <div class="opcion"> → .opcion
+│       │   │       │           ├── <input class="opcion__marca" id="curso-2"> → .opcion__marca #curso-2
+│       │   │       │           └── <label>
+│       │   │       │
+│       │   │       ├── <div class="campo campo--nota"> → .campo .campo--nota
+│       │   │       │   ├── <label class="campo__etiqueta"> → .campo__etiqueta
+│       │   │       │   │   └── <span aria-hidden="true">
+│       │   │       │   ├── <input class="campo__control" id="nota"> → .campo__control #nota
+│       │   │       │   └── <p class="campo__ayuda" id="nota-ayuda"> → .campo__ayuda #nota-ayuda
+│       │   │       │
+│       │   │       └── <fieldset class="opciones campo--idiomas"> → .opciones .campo--idiomas
+│       │   │           ├── <legend class="opciones__pregunta"> → .opciones__pregunta
+│       │   │           └── <div class="opciones__lista"> → .opciones__lista
+│       │   │               ├── <div class="opcion"> → .opcion
+│       │   │               │   ├── <input class="opcion__marca" id="idioma-en"> → .opcion__marca #idioma-en
+│       │   │               │   └── <label>
+│       │   │               ├── <div class="opcion"> → .opcion
+│       │   │               │   ├── <input class="opcion__marca" id="idioma-fr"> → .opcion__marca #idioma-fr
+│       │   │               │   └── <label>
+│       │   │               ├── <div class="opcion"> → .opcion
+│       │   │               │   ├── <input class="opcion__marca" id="idioma-de"> → .opcion__marca #idioma-de
+│       │   │               │   └── <label>
+│       │   │               └── <div class="opcion"> → .opcion
+│       │   │                   ├── <input class="opcion__marca" id="idioma-it"> → .opcion__marca #idioma-it
+│       │   │                   └── <label>
+│       │   │
+│       │   ├── <fieldset class="grupo grupo--destino"> → .grupo .grupo--destino
+│       │   │   ├── <legend class="grupo__titulo"> → .grupo__titulo
+│       │   │   └── <div class="grupo__campos"> → .grupo__campos
+│       │   │       ├── <div class="campo campo--pais"> → .campo .campo--pais
+│       │   │       │   ├── <label class="campo__etiqueta"> → .campo__etiqueta
+│       │   │       │   │   └── <span aria-hidden="true">
+│       │   │       │   └── <select class="campo__control" id="pais"> → .campo__control #pais
+│       │   │       │       ├── <option> (Selecciona)
+│       │   │       │       ├── <option> (irlanda)
+│       │   │       │       ├── <option> (alemania)
+│       │   │       │       ├── <option> (italia)
+│       │   │       │       ├── <option> (portugal)
+│       │   │       │       └── <option> (paises-bajos)
+│       │   │       │
+│       │   │       ├── <div class="campo campo--incorporacion"> → .campo .campo--incorporacion
+│       │   │       │   ├── <label class="campo__etiqueta"> → .campo__etiqueta
+│       │   │       │   │   └── <span aria-hidden="true">
+│       │   │       │   └── <input class="campo__control" id="incorporacion"> → .campo__control #incorporacion
+│       │   │       │
+│       │   │       └── <fieldset class="opciones campo--duracion"> → .opciones .campo--duracion
+│       │   │           ├── <legend class="opciones__pregunta"> → .opciones__pregunta
+│       │   │           │   └── <span aria-hidden="true">
+│       │   │           └── <div class="opciones__lista"> → .opciones__lista
+│       │   │               ├── <div class="opcion"> → .opcion
+│       │   │               │   ├── <input class="opcion__marca" id="duracion-8"> → .opcion__marca #duracion-8
+│       │   │               │   └── <label>
+│       │   │               ├── <div class="opcion"> → .opcion
+│       │   │               │   ├── <input class="opcion__marca" id="duracion-10"> → .opcion__marca #duracion-10
+│       │   │               │   └── <label>
+│       │   │               └── <div class="opcion"> → .opcion
+│       │   │                   ├── <input class="opcion__marca" id="duracion-12"> → .opcion__marca #duracion-12
+│       │   │                   └── <label>
+│       │   │
+│       │   ├── <fieldset class="grupo grupo--motivacion"> → .grupo .grupo--motivacion
+│       │   │   ├── <legend class="grupo__titulo"> → .grupo__titulo
+│       │   │   └── <div class="grupo__campos"> → .grupo__campos
+│       │   │       ├── <div class="campo campo--carta"> → .campo .campo--carta
+│       │   │       │   ├── <label class="campo__etiqueta"> → .campo__etiqueta
+│       │   │       │   │   └── <span aria-hidden="true">
+│       │   │       │   ├── <textarea class="campo__control" id="carta"> → .campo__control #carta
+│       │   │       │   └── <div class="campo__pie"> → .campo__pie
+│       │   │       │       ├── <p class="campo__ayuda" id="carta-ayuda"> → .campo__ayuda #carta-ayuda
+│       │   │       │       └── <p class="campo__ayuda" id="carta-limite"> → .campo__ayuda #carta-limite
+│       │   │       │
+│       │   │       └── <div class="campo campo--curriculum"> → .campo .campo--curriculum
+│       │   │           ├── <label class="campo__etiqueta"> → .campo__etiqueta
+│       │   │           ├── <input class="campo__control" id="curriculum"> → .campo__control #curriculum
+│       │   │           └── <p class="campo__ayuda" id="curriculum-ayuda"> → .campo__ayuda #curriculum-ayuda
+│       │   │
+│       │   ├── <div class="opcion opcion--larga"> → .opcion .opcion--larga
+│       │   │   ├── <input class="opcion__marca" id="privacidad"> → .opcion__marca #privacidad
+│       │   │   └── <label>
+│       │   │       ├── <a>
+│       │   │       └── <span aria-hidden="true">
+│       │   │
+│       │   └── <div class="botonera"> → .botonera
+│       │       ├── <button class="boton boton--borrar"> → .boton .boton--borrar
+│       │       ├── <button class="boton boton--secundario"> → .boton .boton--secundario
+│       │       └── <button class="boton boton--principal"> → .boton .boton--principal
+│       │
+│       └── <aside class="ayuda"> → .ayuda
+│           ├── <h2 class="ayuda__titulo" id="ayuda-titulo"> → .ayuda__titulo #ayuda-titulo
+│           └── <ol class="ayuda__lista"> → .ayuda__lista
+│               ├── <li class="ayuda__paso"> → .ayuda__paso
+│               │   ├── <span class="ayuda__numero"> → .ayuda__numero
+│               │   └── <p class="ayuda__texto"> → .ayuda__texto
+│               │       └── <strong>
+│               ├── <li class="ayuda__paso"> → .ayuda__paso
+│               │   ├── <span class="ayuda__numero"> → .ayuda__numero
+│               │   └── <p class="ayuda__texto"> → .ayuda__texto
+│               │       └── <strong>
+│               └── <li class="ayuda__paso"> → .ayuda__paso
+│                   ├── <span class="ayuda__numero"> → .ayuda__numero
+│                   └── <p class="ayuda__texto"> → .ayuda__texto
+│                       └── <strong>
+│
+└── <footer class="pie"> → .pie
+    ├── <p class="pie__texto"> → .pie__texto
+    └── <nav>
+        └── <ul class="pie__lista"> → .pie__lista
+            ├── <li>
+            │   └── <a class="pie__enlace"> → .pie__enlace
+            ├── <li>
+            │   └── <a class="pie__enlace"> → .pie__enlace
+            └── <li>
+                └── <a class="pie__enlace"> → .pie__enlace

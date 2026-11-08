@@ -8,16 +8,19 @@ abres la página en diferentes navegadores siempre se mantenga la forma y no se 
 
 body {
   font-family: sans-serif;
-  display: flex;
+  display: flex; /* Lo ponemos en el body para que haga una columna con el contenido */
   flex-direction: column;
-  min-height: 100vh;
   color: #1b1b1b;
   background-color: #f4f6f9;
+    min-height: 100vh; /* Esto asegura que el body ocupe al menos toda la pantalla, así el FOOTER queda siempre abajo aunque haya poco texto */
+
 }
 
 .salto {
   position: absolute;
-  left: -9999px;
+  left: -9999px; /* Esto es para esconderlo, cuando le demos al tabulador se verá ya que 
+  técnicamente es el primer elemento que hay en la página, lo puse ahí porque sale en html en las fotos
+  de referencia de la página no he visto nada asi que supongo que será para esconderlo*/
 }
 .salto:focus {
   left: 0;
@@ -26,14 +29,14 @@ body {
   z-index: 100;
 }
 
-/*Cabecera y Pie */
+/* Cabecera y Pie */
 .cabecera, .pie {
   background-color: #12355b;
   color: #ffffff;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 1.5rem 2rem;
   gap: 1rem;
 }
@@ -46,20 +49,24 @@ body {
 .menu__lista, .pie__lista {
   display: flex;
   flex-wrap: wrap;
-  list-style: none;
   gap: 1.5rem;
+  list-style: none; /* Quita los puntos de las listas (<ul>) */
+  
 }
 
 .menu__enlace, .pie__enlace {
   color: #ffffff;
   text-decoration: none;
   padding-bottom: 0.2rem;
+  
 }
 
+/* Añadir el subrayado cuando pasa el ratón*/
 .menu__enlace:hover, .pie__enlace:hover {
   text-decoration: underline;
 }
 
+/* Este así resalta más la seccion "Solicitud", que es como viene en las imágenes */
 .menu__enlace[aria-current="page"] {
   font-weight: bold;
   border-bottom: 3px solid #ffcc00;
@@ -68,7 +75,7 @@ body {
 
 /* Estructura Principal*/
 .principal {
-  flex-grow: 1;
+  justify-self: 1; /* Esto hace que el main que es el contenedor principal ocupe todo el body haciend oque el footer esté sí o sí abajo */
   padding: 2rem;
 }
 
@@ -81,7 +88,7 @@ h1 {
   margin-bottom: 2rem;
 }
 
-.contenido {
+.contenido { /* Un grid para el div que coge todo el formulario */
   display: grid;
   gap: 2rem;
 }
@@ -102,12 +109,13 @@ h1 {
 
 .grupo__titulo {
   color: #12355b;
+  padding: 0 0.5rem; /* Así cre que esta mejor para que la línea del borde no toque las letras */
   font-weight: bold;
   font-size: 1.2rem;
-  padding: 0 0.5rem;
+  
 }
 
-.grupo__campos {
+.grupo__campos { /* Así el div de los campos inputs se apilan en 1 columna */
   display: grid;
   gap: 1rem;
 }
@@ -124,9 +132,9 @@ h1 {
 
 .campo__control {
   width: 100%;
-  min-width: 0;
+  min-width: 0; /* Gracias al grid evita que un input largo se salga de su columna */
   min-height: 44px;
-  font-family: inherit;
+  font-family: inherit; /* Este es así porque ya hereda el tipo de letra, una de las cosas que quería corregir porque estaba haciendo muchísimas líneas de código */
   font-size: 1rem;
   border: 2px solid #5b6b7f;
   border-radius: 0.25rem;
@@ -134,6 +142,7 @@ h1 {
   color: #1b1b1b;
 }
 
+/* El efecto cuando hacemos un click */
 .campo__control:focus {
   outline: 2px solid #0a5bd3;
   outline-offset: 2px;
@@ -143,15 +152,15 @@ h1 {
   font-size: 0.875rem;
   color: #4a5568;
 }
+/* el maestro uso anhywere en ayuda__texto, es una posibilidad*/
 
 /* Teléfono */
 .telefono {
   display: grid;
   grid-template-columns: minmax(6rem, 9.5rem) 1fr;
+  /* Con esto creo dos columnas: la del prefijo mínimo 6rem y máximo 9.5rem, 
+  y el número se lleva el resto (1fr) */
   gap: 0.5rem;
-}
-.telefono__prefijo, .telefono__numero {
-  /* Toman los estilos generales de campo__control automáticamente */
 }
 
 /* Las diferentes opciones que hay en los formularios */
@@ -169,14 +178,17 @@ h1 {
 .opciones__lista {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+  /* Esta es en automático; creo columnas que miden mínimo 8rem y el máximo es lo que haya
+  así si la pantalla crece caben más columnas sin usar responsive */
   gap: 1.5rem;
 }
 
+/* Al ser de aceptar terminos poneos un grid para alineas la casilla con el texto */
 .opcion {
   display: grid;
   grid-template-columns: 1.5rem 1fr;
   gap: 0.5rem;
-  align-items: center;
+  align-items: center; /* Lo centramos verticalmente */
   min-height: 44px;
 }
 
@@ -187,7 +199,7 @@ h1 {
 }
 
 .opcion--larga {
-  align-items: start;
+  align-items: start; /* Para alinear para arriba en vez de pal centro*/
   margin-top: 1rem;
 }
 
@@ -196,3 +208,167 @@ h1 {
   gap: 0.25rem;
 }
 
+
+.botonera {
+  display: grid;
+  margin-top: 1.5rem;
+  gap: 1rem; /* En móvil se apilan uno debajo del otro separados 1rem */
+  
+}
+
+.boton {
+  min-height: 44px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  cursor: pointer; /*  Para darle un poco de efectillo */
+  padding: 0.5rem 1rem;
+}
+
+.boton--principal {
+  background-color: #12355b;
+  color: #ffffff;
+  border: none;
+}
+
+.boton--secundario {
+  background-color: #ffffff;
+  border: 2px solid #12355b;
+  color: #12355b;
+}
+
+.boton--borrar {
+  color: #1b1b1b;
+  border: 2px solid #b7c0cc;
+  background-color: #ffffff;
+  
+}
+
+/* EL CUADRO DE AYUDA DE LO DE ANTES DE EMPEZAR... */
+.ayuda {
+  display: grid;
+  border: 1px solid #b7c0cc;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+.ayuda__titulo {
+  color: #12355b;
+  font-size: 1.2rem;
+}
+
+.ayuda__lista {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+/* Cada paso tiene 2 columnas: auto (para el círculo) y 1fr (para el texto) */
+.ayuda__paso {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+}
+
+/* Para el diseño de lo que es el círculo que llevan los numeros que "listan" los pasos */
+.ayuda__numero {
+  display: grid;
+  place-items: center; /* Centra el número en medio del círculo */
+  background-color: #194a7e;
+  color: #ffffff;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.ayuda__texto {
+  color: #1b1b1b;
+}
+/* Dijo que maestro que había que poner diferencia en el tamaño de las letras */
+.ayuda__texto strong{
+  font-size: 1.2rem;
+}
+
+
+/* A partir de 40em rediseñamos el interior del formulario */
+@media (min-width: 40em) {
+  
+  /* Convertimos las tarjetas en una rejilla de 6 columnas iguales (1fr) */
+  .grupo__campos {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem 1.5rem;
+  }
+
+  /* --- Reparto en 6 columnas usando grid-column (span) --- */
+  /* Grupo 1: Personales */
+  .grupo--personales .campo--nombre { grid-column: span 2; }    /* Nombre ocupa 2 de 6 */
+  .grupo--personales .campo--apellidos { grid-column: span 4; } /* Apellidos ocupa 4 de 6 */
+  .grupo--personales .campo--correo { grid-column: span 3; }    /* Mitad y mitad */
+  .grupo--personales .campo--telefono { grid-column: span 3; }
+  .grupo--personales .campo--nacimiento { grid-column: span 2; } 
+  
+  /* Grupo 2: Académicos */
+  .grupo--academicos .campo--ciclo { grid-column: span 3; }
+  .grupo--academicos .campo--curso { grid-column: span 3; }
+  .grupo--academicos .campo--nota { grid-column: span 2; }
+  .grupo--academicos .campo--idiomas { grid-column: span 4; }
+
+  /* --- Reparto usando Zonas Nombradas (grid-template-areas) --- */
+  /* Grupo 3: Destino. Se "dibuja" el mapa de colocación */
+  .grupo--destino .grupo__campos {
+    grid-template-areas:
+      "pais pais pais inc inc inc"
+      "dur dur dur dur dur dur";
+  }
+  .grupo--destino .campo--pais { grid-area: pais; }
+  .grupo--destino .campo--incorporacion { grid-area: inc; }
+  .grupo--destino .campo--duracion { grid-area: dur; }
+
+  /* Grupo 4: Motivación */
+  .grupo--motivacion .grupo__campos {
+    grid-template-areas:
+      "carta carta carta carta carta carta"
+      "cv cv cv cv cv cv";
+  }
+  .grupo--motivacion .campo--carta { grid-area: carta; }
+  .grupo--motivacion .campo--curriculum { grid-area: cv; }
+
+  /* Alineación de los textos debajo de la carta */
+  .campo__pie {
+    grid-template-columns: 1fr auto; /* Texto izq ocupa espacio libre, texto der lo justo */
+  }
+  #carta-limite {
+    text-align: right;
+  }
+
+  /* Botones en pantallas grandes: 
+     Borrar se queda a la izquierda (1fr empuja), los otros dos (auto) a la derecha */
+  .botonera {
+    grid-template-columns: 1fr auto auto;
+  }
+  .boton--borrar {
+    justify-self: start; /* Impide que el botón de borrar se estire por todo el 1fr */
+  }
+}
+
+/* A partir de 56em (aprox 896px, tamaño escritorio) movemos el cuadro de ayuda */
+@media (min-width: 56em) {
+  /* Pone el formulario a la izquierda (1fr) y la ayuda a la derecha (ancho fijo de 22rem) */
+  .contenido {
+    grid-template-columns: 1fr 22rem;
+    align-items: start; /* Impide que la caja de ayuda se estire en altura al nivel del formulario */
+  }
+}
+
+
+/* NOTA PARA EL MAESTRO:
+Jorge yo creo que así mas o menos está bien, algunas cosas lógicamente las he preguntado por internet
+y he pedido algunos consejos de estructuración porque al principio (y en clase) lo tenía bastante desordenado
+aparte de que estaban fatales lo de las cascadas de propiedades, he tratado de mejorarlo todo en general
+porque aparte me sirve para estudiar para el examen
+*/
