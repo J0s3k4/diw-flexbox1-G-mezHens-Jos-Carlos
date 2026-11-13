@@ -1,3 +1,23 @@
+:root{
+  /* Colores que ya había */
+  --color-primario: #12355b; /* Cabecera. pie, tçitulos, botón principal */
+  --color-fondo-pagina: #f4f6f9; /* Lo tengo declarado en el bd del body */
+  --color-fondo-tarjeta-o-texto-blanco: #ffffff;
+  --color-letras: #1b1b1b;
+  --color-texto-ayuda: #4a5568;
+  --color-borde: #b7c0cc;
+  --color-borde-control: #5b6b7f;
+  --color-foco: #0a5bd3;
+  --color-destaque-menu: #ffcc00;
+  /* Los nuevos colores que hemos puesto en la parte C */
+  --color-primario-claro: #1f5088; /* Extremo claro del degradado */
+  --color-boton-hover: #e3ebf5;
+  --color-boton-principal-hover: #0b2340;
+  --sombra-bloques-y-boton: #12355b33;
+  --sombra-texto: #00000073;
+}
+
+
 /* Le he puesto esto porque al parecer lo recomiendan en casi todos los sitios para asergurarte de que cuando 
 abres la página en diferentes navegadores siempre se mantenga la forma y no se rompa */
 * {
@@ -10,8 +30,8 @@ body {
   font-family: sans-serif;
   display: flex; /* Lo ponemos en el body para que haga una columna con el contenido */
   flex-direction: column;
-  color: #1b1b1b;
-  background-color: #f4f6f9;
+  color: var(--color-letras);
+  background-color: var(--color-fondo-pagina);
     min-height: 100vh; /* Esto asegura que el body ocupe al menos toda la pantalla, así el FOOTER queda siempre abajo aunque haya poco texto */
 
 }
@@ -27,11 +47,12 @@ body {
   background: #ffffff;
   padding: 1rem;
   z-index: 100;
+  background-color: var(--color-fondo-tarjeta);
 }
 
 /* Cabecera y Pie */
 .cabecera, .pie {
-  background-color: #12355b;
+  background-color: var(--color-primario);
   color: #ffffff;
   display: flex;
   flex-wrap: wrap;
@@ -39,11 +60,13 @@ body {
   justify-content: space-between;
   padding: 1.5rem 2rem;
   gap: 1rem;
+  background-image: linear-gradient(to right, var(--color-primario), var(--color-primario-claro));
 }
 
 .cabecera__marca {
   font-size: 1.5rem;
   font-weight: bold;
+  text-shadow: 0 0.0625rem 0.125rem var(--sombra-texto);
 }
 
 .menu__lista, .pie__lista {
@@ -55,7 +78,7 @@ body {
 }
 
 .menu__enlace, .pie__enlace {
-  color: #ffffff;
+  color: var(--color-fondo-tarjeta-o-texto-blanco);
   text-decoration: none;
   padding-bottom: 0.2rem;
   
@@ -69,7 +92,7 @@ body {
 /* Este así resalta más la seccion "Solicitud", que es como viene en las imágenes */
 .menu__enlace[aria-current="page"] {
   font-weight: bold;
-  border-bottom: 3px solid #ffcc00;
+  border-bottom: 3px solid var(--color-destaque-menu);
   text-decoration: none;
 }
 
@@ -80,7 +103,7 @@ body {
 }
 
 h1 {
-  color: #12355b;
+  color: var(--color-primario);
   margin-bottom: 1rem;
 }
 
@@ -100,15 +123,16 @@ h1 {
 }
 
 .grupo {
-  background-color: #ffffff;
-  border: 1px solid #b7c0cc;
+  background-color: var(--color-fondo-tarjeta);
+  border: 1px solid var(--color-borde);
   border-radius: 0.5rem;
   padding: 1.5rem;
   margin: 0; /* Lo que este hace es resetear el fieldset */
+  box-shadow: 0 0.125rem 0.5rem var(--sombra-bloques-y-boton);
 }
 
 .grupo__titulo {
-  color: #12355b;
+  color: var(--color-primario);
   padding: 0 0.5rem; /* Así cre que esta mejor para que la línea del borde no toque las letras */
   font-weight: bold;
   font-size: 1.2rem;
@@ -136,21 +160,21 @@ h1 {
   min-height: 44px;
   font-family: inherit; /* Este es así porque ya hereda el tipo de letra, una de las cosas que quería corregir porque estaba haciendo muchísimas líneas de código */
   font-size: 1rem;
-  border: 2px solid #5b6b7f;
+  border: 2px solid var(--color-borde-control);
   border-radius: 0.25rem;
   padding: 0.5rem;
-  color: #1b1b1b;
+  color: var(--color-letras);
 }
 
 /* El efecto cuando hacemos un click */
 .campo__control:focus {
-  outline: 2px solid #0a5bd3;
+  outline: 2px solid var(--color-foco);
   outline-offset: 2px;
 }
 
 .campo__ayuda {
   font-size: 0.875rem;
-  color: #4a5568;
+  color: var(--color-texto-ayuda);
 }
 /* el maestro uso anhywere en ayuda__texto, es una posibilidad*/
 
@@ -227,36 +251,45 @@ h1 {
 }
 
 .boton--principal {
-  background-color: #12355b;
-  color: #ffffff;
+  background-color: var(--color-primario);
+  color: var(--color-fondo-tarjeta-o-texto-blanco);
   border: none;
+  box-shadow: 0 0.125rem 0.25rem var(--sombra-bloques-y-boton);
 }
 
 .boton--secundario {
-  background-color: #ffffff;
-  border: 2px solid #12355b;
-  color: #12355b;
+  background-color: var(--color-fondo-tarjeta-o-texto-blanco);
+  border: 2px solid var(--color-primario);
+  color: var(--color-primario);
 }
 
 .boton--borrar {
-  color: #1b1b1b;
-  border: 2px solid #b7c0cc;
-  background-color: #ffffff;
+  color: var(--color-letras);
+  border: 2px solid var(--color-borde);
+  background-color: var(--color-fondo-tarjeta-o-texto-blanco);
   
+}
+
+/* aqui viene el hover y el focus-visible */
+.boton--principal:hover, 
+.boton--principal:focus-visible {
+  background-color: var(--color-boton-principal-hover);
+  /* tramslateX es horizontal y translateY es vertizal */
+  transform: translateY(-2px);
 }
 
 /* EL CUADRO DE AYUDA DE LO DE ANTES DE EMPEZAR... */
 .ayuda {
   display: grid;
-  border: 1px solid #b7c0cc;
-  background-color: #ffffff;
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-fondo-tarjeta-o-texto-blanco);
   border-radius: 0.5rem;
   padding: 1.5rem;
   gap: 1.5rem;
 }
 
 .ayuda__titulo {
-  color: #12355b;
+  color: var(--color-primario);
   font-size: 1.2rem;
 }
 
@@ -277,17 +310,21 @@ h1 {
 .ayuda__numero {
   display: grid;
   place-items: center; /* Centra el número en medio del círculo */
-  background-color: #194a7e;
-  color: #ffffff;
+  background-color: var(--color-primario); /* Aqui tenía puesto otro color pero bueno, el que más se le acerca es ese var */
+  color: var(--color-fondo-tarjeta-o-texto-blanco);
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 50%;
   font-weight: bold;
   font-size: 0.875rem;
+  transition: transform 0.2s;
+}
+.ayuda__paso:hover{
+  transform: scale(1.05); /* Le he tenido que poner esta escala porque con las demás se salía del div */
 }
 
 .ayuda__texto {
-  color: #1b1b1b;
+  color: var(--color-letras);
 }
 /* Dijo que maestro que había que poner diferencia en el tamaño de las letras */
 .ayuda__texto strong{

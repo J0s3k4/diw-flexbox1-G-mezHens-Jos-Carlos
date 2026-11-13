@@ -27,3 +27,10 @@ frelgrow 1 asegura que el pie se mantenga siempre en la parte inferior
 los tamaños relativos con rem y vh facilitan la adaptación a distintos dispositivos sin que el contenido se ponga feo
 
 en enlace actual se selecciona semánticamente con [aria-current="page"], sin añadir más clases para no abultar el html
+
+# Contraste cabecera/pie
+
+Contrast Ratio: 10.69 (supera el mínimo exigido 4.5:1)
+AA: 4.5
+AAA: 7.0
+Cumplen los estándares
